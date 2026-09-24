@@ -2,22 +2,22 @@
 type: Project Guide
 title: Pediatric Office Automation System
 description: JavaFX desktop application with nurse, doctor, and patient views backed by SQLite.
-resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office
+resource: https://github.com/darshchaurasia/pediatric-office-system
 tags:
 - java
 - javafx
 - sqlite
 - coursework
 sources:
-- resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/.classpath
+- resource: https://github.com/darshchaurasia/pediatric-office-system/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/.classpath
   title: .classpath
-- resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/src/ui/main.java
+- resource: https://github.com/darshchaurasia/pediatric-office-system/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/src/ui/main.java
   title: src/ui/main.java
-- resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/src/db/DatabaseConnector.java
+- resource: https://github.com/darshchaurasia/pediatric-office-system/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/src/db/DatabaseConnector.java
   title: src/db/DatabaseConnector.java
-- resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/src/util/module-info.java
+- resource: https://github.com/darshchaurasia/pediatric-office-system/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/src/util/module-info.java
   title: src/util/module-info.java
-- resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/README.md
+- resource: https://github.com/darshchaurasia/pediatric-office-system/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/README.md
   title: README.md
 ---
 
