@@ -1,110 +1,69 @@
-# Office-Automation-System-for-Pediatric-Doctor-s-Office
+---
+type: Project Guide
+title: Pediatric Office Automation System
+description: JavaFX desktop application with nurse, doctor, and patient views backed by SQLite.
+resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office
+tags:
+- java
+- javafx
+- sqlite
+- coursework
+sources:
+- resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/.classpath
+  title: .classpath
+- resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/src/ui/main.java
+  title: src/ui/main.java
+- resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/src/db/DatabaseConnector.java
+  title: src/db/DatabaseConnector.java
+- resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/src/util/module-info.java
+  title: src/util/module-info.java
+- resource: https://github.com/darshchaurasia/Office-Automation-System-for-Pediatric-Doctor-s-Office/blob/f9b3ccc25b4b2cbfd013d6ee30022b88f8556c81/README.md
+  title: README.md
+---
 
-## Overview
+# Pediatric Office Automation System
 
-Doctor's Office Automation Application for Nurse, Doctor & Patient.
+A JavaFX desktop application with nurse, doctor, and patient portals. The application manages patient records, visits, prescriptions, allergies, immunizations, health issues, and messages through DAO classes backed by SQLite.
 
-## Requirements
+## Build requirements
 
-- Java Development Kit (JDK)
-- Eclipse IDE (or any Java IDE of your choice)
-- SQLite DB Browser (for database management)
-- [sqlite-jdbc-3.45.2.0.jar](lib/sqlite-jdbc-3.45.2.0.jar)
+- JDK 21, matching the checked-in Eclipse classpath.
+- JavaFX 21 SDK, configured as the Eclipse user library `JavaFX21`.
+- Eclipse with Java support and the JavaFX/e(fx)clipse container referenced by `.classpath`, or equivalent manually configured JavaFX libraries.
+- The three checked-in dependencies in `lib/`: `sqlite-jdbc-3.45.2.0.jar`, `slf4j-api-2.0.12.jar`, and `slf4j-simple-2.0.12.jar`.
 
-## Installation
+## Build and run from source
 
-1. Clone the repository.
-2. Open Eclipse IDE.
-3. Import the project into Eclipse.
-4. Make sure to include `sqlite-jdbc-3.45.2.0.jar`,`sIf4j-simple-2.0.12.jar` and `sif4j-api-2.0.12.jar` in the project build path.
-5. Ensure SQLite DB Browser is installed for managing the database.
+1. Import the repository as an existing Eclipse project.
+2. Select JDK 21 and resolve the JavaFX classpath containers. Point `JavaFX21` at your installed SDK libraries.
+3. Confirm `src/` is the source directory and `bin/` is the compiler output directory. Retain the JAR entries under `lib/`.
+4. Use **Project > Clean**, then build the project. Compiled `.class` files are generated locally and are excluded from Git.
+5. Run [src/ui/main.java](src/ui/main.java), whose fully qualified class name is `ui.main`, with JavaFX configured in the launch settings.
+6. Set the working directory to the repository root so the relative SQLite path resolves to `database/th43.db`.
 
-## Usage
+The entry screen opens nurse, doctor, and patient views. DB Browser for SQLite is optional for inspecting the database.
 
-1. Compile and run `main.java` to start the application.
-2. Use the login interface to authenticate.
-3. Based on the role (Nurse, Doctor, or Patient), the respective dashboard or portal will be displayed.
-4. Navigate through the application using the provided UI components.
-5. Manage the database using SQLite DB Browser as needed.
+The module declaration currently lives at `src/util/module-info.java`; if your IDE requires a module descriptor at the source root, resolve that project-layout issue before using a modular build. This documentation update does not relocate source files. A JavaFX build and desktop launch have not been verified in this update.
 
-## Structure
+## Repository map
 
-```
-th43/
-│
-├── src/
-│   ├── db/
-│   │   └── DatabaseConnector.java
-│   │
-│   ├── dao/ 
-│   │   ├── AllergyDAO.java
-│   │   ├── PatientDAO.java
-│   │   ├── PrescriptionDAO.java
-│   │   ├── VisitDAO.java
-│   │   ├── PatientDAO.java
-│   │   ├── MessageDAO.java
-│   │   ├── HealthIssueDAO.java
-│   │   └── ImmunizationDAO.java       
-│   │
-│   ├── model/
-│   │   ├── Allergy.java
-│   │   ├── Patient.java
-│   │   ├── Prescription.java
-│   │   ├── Visit.java
-│   │   ├── Patient.java
-│   │   ├── Message.java
-│   │   ├── HealthIssue.java
-│   │   └── Immunization.java   
-│   │
-│   ├── ui/
-│   │   ├── main.java
-│   │   ├── PatientDetailScreen.java
-│   │   ├── NurseViewScreen.java
-│   │   ├── NurseDocDashboardScreen.java
-│   │   ├── MessagesScreen.java
-│   │   ├── Health|ssueListScreen.java
-│   │   ├── AllergyEditScreen.java
-│   │   ├── Health|ssueEditScreen.java
-│   │   ├── DoctorViewScreen.java
-│   │   ├── AllergyListScreen.java
-│   │   ├── VisitListScreen.java
-│   │   ├── VisitEditScreen.java
-│   │   ├── SuccessfulLogin.java
-│   │   ├── PrescriptionListScreen.java
-│   │   ├── PrescriptionEditScreen.java
-│   │   ├── PatientViewScreen.java
-│   │   ├── PatientRegistration.java
-│   │   ├── PatientListScreen.java
-│   │   └── PatientEditScreen.java
-│   │
-│   └── util/
-│       ├── module-info.java
-│       └── UlHelper.java
-│
-├── lib/
-│   ├── sif4j-api-2.0.12.jar
-│   ├── sIf4j-simple-2.0.12.jar
-│   └── sqlite-jdbc-3.45.2.0.jar
-│
-└── database/
-    └── th43.db
- 
-```
-
-## Database
-
-The SQLite database file `th43.db` is located in the `database` directory. You can use SQLite DB Browser to manage and view the database schema and data.
+| Path | Purpose |
+| --- | --- |
+| [src/ui/](src/ui/) | Application entry point and screens. |
+| [src/model/](src/model/) | Patient and clinical record models. |
+| [src/dao/](src/dao/) | Database access for records and messages. |
+| [src/db/DatabaseConnector.java](src/db/DatabaseConnector.java) | SQLite connection using `jdbc:sqlite:database/th43.db`. |
+| [src/util/](src/util/) | UI helper and module declaration. |
+| [lib/](lib/) | JDBC and logging libraries required by the project. |
+| [database/](database/) | Existing SQLite database. |
+| [.classpath](.classpath) | Eclipse source, dependency, and output configuration. |
 
 ## Contributing
 
-Feel free to contribute to the project by forking it and submitting pull requests. Bug reports, feature requests, and feedback are always appreciated.
+Bug reports, feature requests, and pull requests are welcome. Keep source changes separate from locally generated compiler output.
 
-## License
+## Rights and contact
 
-This project is private and all rights are reserved. No part of this project may be reproduced, distributed, or transmitted in any form or by any means, without the prior written permission of the owner.
+All rights are reserved under the existing project notice. Reproduction or distribution requires the owner's prior written permission.
 
-## Contact
-
-darshchaurasia@gmail.com
-
-
+Contact: darshchaurasia@gmail.com
